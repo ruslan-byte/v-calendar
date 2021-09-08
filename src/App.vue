@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app">
+    <Calendar :events="events"/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Calendar from "@/components/Calendar"
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+	name: 'App',
+	components: {Calendar},
+	setup(){
+		let events = [
+			{id:0, name:"18:00 Семинар на какую-то тему", type:"red", date:"01-09-2021"},
+			{id:1, name:"18:00 Семинар на какую-то тему", type:"green", date:"01-09-2021"},
+			{id:2, name:"18:00 Семинар на какую-то тему", type:"orange", date:"01-09-2021"},
+			{id:3, name:"18:00 Семинар на какую-то тему", type:"orange", date:"07-09-2021"},
+			{id:4, name:"18:00 Семинар на какую-то тему", type:"red", date:"17-09-2021"},
+			{id:5, name:"18:00 Семинар на какую-то тему", type:"green", date:"17-09-2021"},
+		]
+		return {events}
+	}
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
